@@ -1,0 +1,20 @@
+version: '2'
+services:
+  db:
+    image: mysql
+    environment:
+      - MYSQL_ROOT_PASSWORD=baklava
+      - MYSQL_USER=baklava
+      - MYSQL_PASSWORD=baklava
+      - MYSQL_DATABASE=baklava
+  web:
+    container_name: baklava-web
+    build: .
+    command: python2.7 manage.py runserver 0.0.0.0:8000
+    volumes:
+      -  .:/usr/src/app
+    ports:
+      -  8000:8000
+    links:
+      -  db
+  
