@@ -11,6 +11,6 @@
 docker.conf
 logfile.*
 .~lock.*
-/static
+baklava/static
 .vscode/
 *.sqlite3
